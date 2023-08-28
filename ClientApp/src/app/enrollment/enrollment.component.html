@@ -1,0 +1,24 @@
+<div *ngIf="responseMensaje">
+  <p>Respuesta del servidor: {{ responseMensaje }}</p>
+</div>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="subjects.length">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Creditos</th>
+        <th>Profesor</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of subjects">
+        <td>{{ s.id }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.creditsNumber }}</td>
+        <td>{{ s.teacherName }}</td>
+        <td><button (click)="enroll(s.id)" type="button" class="btn btn-primary">Inscribirme</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>{{ userName | async }}</p>

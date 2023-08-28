@@ -1,0 +1,25 @@
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="studentSubjects.length">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Creditos</th>
+        <th>Profesor</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of studentSubjects">
+        <td>{{ s.id }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.creditsNumber }}</td>
+        <td>{{ s.teacherName }}</td>
+        <td><button (click)="viewPartners(s.id)" type="button" class="btn btn-primary">Ver companeros</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <ul *ngFor="let p of partners">
+      <li>{{p}}</li>
+    </ul>
+  </div>
